@@ -1,0 +1,231 @@
+/* 在主页的样式去引入公共的样式文件 */
+
+@import 'base.less';
+/* 头部区域 */
+
+body{
+        /* 给body设置最大宽度让页面在pc端不会太大 */
+        max-width: 750px;
+        /* 让body居中,块级居中使用margin:0auto */
+        margin:0px auto;
+}
+
+#header {
+        max-width: 750px;
+        display: flex;
+        padding: 7px 10px;
+        width: 100%;
+        position: fixed;
+        background-color: rgba(222, 24, 27, 0);
+        z-index: 999;
+        .icon-logo {
+                display: block;
+                width: 58px;
+                height: 23px;
+                margin-top: 3px;
+                background-position: 0 -110px;
+        }
+        form {
+                flex: 1;
+                margin-left: 10px;
+                position: relative;
+                .icon-search {
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        background-position: -60px -110px;
+                        position: absolute;
+                        left: 5px;
+                        top: 6px;
+                }
+                input {
+                        width: 100%;
+                        height: 30px;
+                        border-radius: 15px;
+                        padding-left: 30px;
+                }
+        }
+        .login {
+                width: 60px;
+                line-height: 30px;
+                text-align: center;
+                color: #fff;
+        }
+}
+
+/* 轮播图区域 */
+
+#section {
+        img {
+                width: 100%;
+        }
+}
+
+/* 导航条区域 */
+
+#nav {
+        background-color: #fff;
+        ul {
+                padding: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                        width: 25%;
+                        a {
+                                display: block;
+                                text-align: center;
+                                img {
+                                        width: 40px;
+                                        height: 40px;
+                                }
+                                p {
+                                        line-height: 30px;
+                                }
+                        }
+                }
+        }
+}
+
+/* 商品主体区域 秒杀模块 */
+
+#main {
+        padding: 10px;
+        background-color: #f5f5f5;
+        padding-bottom:60px; 
+        .seckill {
+                background-color: #fff;
+                box-shadow: 0px 0px 1px #ccc;
+                .time {
+                        display: flex;
+                        >img {
+                                width: 20px;
+                                height: 25px;
+                                position: relative;
+                        }
+                        .word {
+                                margin-left: 10px;
+                                color: @main-color
+                        }
+                        .count-down {
+                                margin-left: 10px;
+                                >span {
+                                        display: inline-block;
+                                        width: 15px;
+                                        height: 15px;
+                                        line-height: 15px;
+                                        text-align: center;
+                                        background-color: #000;
+                                        color: #fff;
+                                        &:nth-child(3n) {
+                                                background-color: #fff;
+                                                color: #000;
+                                        }
+                                }
+                        }
+                        .more {
+                                position: absolute;
+                                right: 10px;
+                                font-size: 14px;
+                                color: #666;
+                        }
+                }
+                .commodity{
+                        >ul{
+                                display: flex;
+                                >li{
+                                        flex: 1;
+                                        &+li{
+                                                border-left: 1px solid @border-color;
+                                        }
+                                        >a{
+                                                display: block;
+                                                text-align: center;
+                                                img{
+                                                        width: 110px;
+                                                }
+                                                p{
+                                                        font-size: 12px;
+                                                        &:nth-of-type(1){
+                                                                color: @main-color;
+                                                        }
+                                                        &:nth-of-type(2){
+                                                                color: @border-color;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+
+                }
+        }
+        /* 京东超市 */
+        .jd-market{
+                margin-top: 10px;
+                background-color: #fff;
+                box-shadow: 0px 0px 1px #ccc;
+                .tite{
+                        border-bottom: 1px solid #ccc;
+                        padding-left:30px; 
+                        h4{
+                                line-height: 30px;
+                                position: relative;
+                                font-weight: normal;
+                                &::before{
+                                        content: '';
+                                        position: absolute;
+                                        width: 5px;
+                                        height: 15px;
+                                        background-color:@main-color; 
+                                        left: -15px;
+                                        top: 8px;
+                                }
+                        }
+                }
+                .content{
+                        display: flex;
+                        .left{
+                                flex: 1;
+                                >a{
+                                        display: block;
+                                        >img{
+                                                width: 100%;
+                                        }
+                                }
+                        }
+                        .right{
+                                flex: 1;
+                                >a{
+                                        display: block;
+                                        >img{
+                                                width: 100%;
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+/* 底部区域 */
+
+#footer{
+        max-width: 750px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+        position: fixed;
+        bottom: 0;
+        ul{
+                display: flex;
+                li{
+                        flex: 1;
+                        a{
+                                display: block;
+                                text-align: center;
+                                img{
+                                        width: 65px;
+                                        height: 50px;
+                                }
+                        }
+                }
+        }
+}

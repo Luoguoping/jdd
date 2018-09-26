@@ -1,0 +1,202 @@
+/* 公共变量 */
+/* 样式重置 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+  box-sizing: border-box;
+  /* 去除移动端按住元素的时候会出现高亮背景色 */
+  -webkit-tap-highlight-color: transparent;
+  /* 去掉所有移动端内边框 */
+  outline: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+}
+img {
+  /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+/* 公共样式 */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名一icon-开头 或者 中间包含了空格 icon-的元素 */
+[class^="icon-"],
+[class*=" icon-"] {
+  /* 公共的精灵图 */
+  background-image: url(../images/sprites.png);
+  /* 设置背景图片的大小,图片要缩小一半来写 背景图就设置背景图大小 */
+  background-origin: content-box;
+  background-clip: content-box;
+  background-size: 200px 200px;
+}
+.border-left {
+  border-left: 1px solid #ccc;
+}
+.border-right {
+  border-right: 1px solid #ccc;
+}
+.border-bottom {
+  border-bottom: 1px solid #ccc;
+}
+.border-top {
+  border-top: 1px solid #ccc;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  padding: 40px 0 50px 0;
+}
+/* 头部区域 */
+#header {
+  max-width: 750px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 40px;
+  z-index: 999;
+}
+#header > a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+#header > a.icon-logo {
+  background-position: -20px 0;
+}
+#header > a.icon-login {
+  background-position: -60px 0;
+}
+#header form {
+  flex: 1;
+  padding-top: 5px;
+  position: relative;
+}
+#header form .icon-search {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-position: -60px -110px;
+}
+#header form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+}
+/* 中间内容部分 */
+#main {
+  display: flex;
+  height: 100%;
+}
+#main .category-left {
+  height: 100%;
+  width: 85px;
+  /* 因为left里面的ul超出了屏幕高度 给ul的父元素left设置隐藏溢出 */
+  overflow: hidden;
+}
+#main .category-left .swiper-container {
+  height: 100%;
+}
+#main .category-left .swiper-container .swiper-slide {
+  height: auto;
+}
+#main .category-left .swiper-container .swiper-slide ul {
+  background-color: #f5f5f5;
+}
+#main .category-left .swiper-container .swiper-slide ul > li > a {
+  width: 85px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 12px;
+  text-align: center;
+  display: block;
+}
+#main .category-left .swiper-container .swiper-slide ul > li.active > a {
+  background-color: #fff;
+  color: #e93b3d;
+}
+#main .category-right {
+  flex: 1;
+  padding: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+#main .category-right .swiper-container {
+  height: 100%;
+}
+#main .category-right .swiper-container .swiper-slide {
+  height: auto;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .title > h4 {
+  font-size: 14px;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .content > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .content > ul > li {
+  width: 33.33%;
+  margin: 10px 0;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .content > ul > li > a {
+  display: block;
+  text-align: center;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .content > ul > li > a > img {
+  width: 70px;
+}
+#main .category-right .swiper-container .swiper-slide #branchList .jd-brand .content > ul > li > a > span {
+  display: block;
+  font-size: 12px;
+}
+/* 底部部分 */
+#footer {
+  max-width: 750px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  flex: 1;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: 65px;
+  height: 50px;
+}
